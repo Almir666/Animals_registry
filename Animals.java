@@ -3,23 +3,33 @@ import java.util.Arrays;
 import java.util.List;
 
 abstract class Animals {
-    private String animal_name;
+    private String id;
     private String birthDay;
     private List<String> comands = new ArrayList<>();
 
-    public Animals(String name, String comand[]) {
-        this.animal_name = name;
+    public Animals(String id, String birth, String comand[]) {
+        this.id = id;
+        this.birthDay = birth;
         comands.addAll(Arrays.asList(comand));
     }
 
-    public String getAnimal_name() {
-        return animal_name;
+    public Animals() {
     }
+
+    public String getId() {
+        return id;
+    }
+
     public String getBirthDay() {
         return birthDay;
     }
+
     public List<String> getComands() {
         return comands;
     }
-}
 
+    @Override
+    public String toString() {
+        return getId() + " " + getBirthDay() + " Умеет выполнять: " + getComands();
+    }
+}
