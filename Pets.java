@@ -26,7 +26,9 @@ public class Pets extends Animals{
     public Pets() {
         super();
     }
-
+    public String getAnimal_name() {
+        return animal_name;
+    }
     public String getAnimalClass() {
         return animalClass;
     }

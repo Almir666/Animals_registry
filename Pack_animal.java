@@ -22,6 +22,9 @@ public class Pack_animal extends Animals{
     public Pack_animal() {
         super();
     }
+    public String getAnimal_name() {
+        return animal_name;
+    }
     public String getAnimalClass() {
         return animalClass;
     }   
