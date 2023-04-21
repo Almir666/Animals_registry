@@ -6,7 +6,6 @@ abstract class Animals {
     private String id;
     private String birthDay;
     private List<String> comands = new ArrayList<>();
-    private List<Animals> allAnimals = new ArrayList<>();
 
     public Animals(String id, String birth, String comand[]) {
         this.id = id;
@@ -15,10 +14,6 @@ abstract class Animals {
     }
 
     public Animals() {
-    }
-
-    public List<Animals> getAllAnimals() {
-        return allAnimals;
     }
 
     public String getId() {
@@ -31,10 +26,5 @@ abstract class Animals {
 
     public List<String> getComands() {
         return comands;
-    }
-
-    @Override
-    public String toString() {
-        return getId() + " " + getBirthDay() + " Умеет выполнять: " + getComands();
     }
 }
