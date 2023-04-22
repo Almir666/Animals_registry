@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-
+        Count count = new Count();
         Pets PetsList = new Pets();
         Pack_animal PackList = new Pack_animal();
         for (Cats cat : PetsList.getListCats()) {
@@ -35,5 +35,7 @@ public class Main {
 
         App getApp = new App();
         getApp.start(PetsList, PackList);
+
+        System.out.println(String.valueOf("Count: " + count.getCount()));
     }
 }

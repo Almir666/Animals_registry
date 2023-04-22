@@ -12,6 +12,11 @@ public class App {
                         return;
 
                     case "1":
+                    Count count = null;
+                    try { count = new Count();}
+                    finally {
+                        count.add();
+                    }
                         System.out.println(
                                 "К какому классу относится животное?(выберите нужную цифру)\n1: Домашний питомец\n2: Вьючное животное\n0: предыдущее меню");
                         String key2 = in.next();
@@ -113,9 +118,10 @@ public class App {
                             default:
                                 System.out.println("Введите корректную цифру от 0 до 3");
                                 break;
-                        } break;
-
-                        case "2":
+                        }
+                    break;
+                    
+                    case "2":
                         System.out.println("_____________________________________\n");
                         for (Cats cat : petList.getListCats()) {
                             System.out.println("id:" + cat.getId() + " " + cat.getAnimal_name() + " " + cat.getPersonal_name());
