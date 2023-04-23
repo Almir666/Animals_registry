@@ -1,6 +1,5 @@
 public class Main {
     public static void main(String[] args) {
-        Count count = new Count();
         Pets PetsList = new Pets();
         Pack_animal PackList = new Pack_animal();
         for (Cats cat : PetsList.getListCats()) {
