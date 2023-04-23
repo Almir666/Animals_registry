@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class App {
     public void start(Pets petList, Pack_animal packList) {
+        Count count = new Count();
         try (Scanner in = new Scanner(System.in)) {
             while (true) {
                 System.out.println(
@@ -9,14 +10,12 @@ public class App {
                 String key = in.next();
                 switch (key) {
                     case "0":
+                    System.out.println(String.valueOf("Count: " + count.getCount()));
                         return;
 
                     case "1":
-                    Count count = null;
-                    try { count = new Count();}
-                    finally {
-                        count.add();
-                    }
+                    boolean check = false;
+                    try {
                         System.out.println(
                                 "К какому классу относится животное?(выберите нужную цифру)\n1: Домашний питомец\n2: Вьючное животное\n0: предыдущее меню");
                         String key2 = in.next();
@@ -42,6 +41,9 @@ public class App {
                                         String nameCat = in.next();
                                         Cats tempCat = new Cats(idCat, birthCat, "Кошка", standartCatComands, nameCat);
                                         petList.getListCats().add(tempCat);
+                                        if (!idCat.isEmpty() & !birthCat.isEmpty() & !nameCat.isEmpty()){
+                                            check = true;
+                                        }
                                         break;
 
                                     case "2":
@@ -54,6 +56,9 @@ public class App {
                                         String nameDog = in.next();
                                         Dogs tempDog = new Dogs(idDog, birthDog, "Собака", standartDogComands, nameDog);
                                         petList.getListDogs().add(tempDog);
+                                        if (idDog.isEmpty() & birthDog.isEmpty() & nameDog.isEmpty()){
+                                            check = true;
+                                        }
                                         break;
 
                                     case "3":
@@ -66,6 +71,9 @@ public class App {
                                         String nameH = in.next();
                                         Hamsters tempH = new Hamsters(idH, birthH, "Хомяк", standartHamsterComands, nameH);
                                         petList.getListHamsters().add(tempH);
+                                        if (idH.isEmpty() & birthH.isEmpty() & nameH.isEmpty()){
+                                            check = true;
+                                        }
                                         break;
 
                                     default:
@@ -93,6 +101,9 @@ public class App {
                                         Horses tempHorse = new Horses(idHorse, birthHorse, "Лошадь", standartHorseComands,
                                                 nameHorse);
                                         packList.getListHorses().add(tempHorse);
+                                        if (idHorse.isEmpty() & birthHorse.isEmpty() & nameHorse.isEmpty()){
+                                            check = true;
+                                        }
                                         break;
 
                                     case "2":
@@ -107,6 +118,9 @@ public class App {
                                                 standartDonkeyComands,
                                                 nameDonkey);
                                         packList.getListDonkeys().add(tempDonkey);
+                                        if (idDonkey.isEmpty() & birthDonkey.isEmpty() & nameDonkey.isEmpty()){
+                                            check = true;
+                                        }
                                         break;
 
                                     default:
@@ -119,6 +133,11 @@ public class App {
                                 System.out.println("Введите корректную цифру от 0 до 3");
                                 break;
                         }
+                    } 
+                    
+                    finally {if (check){
+                        count.add();}
+                    }
                     break;
                     
                     case "2":

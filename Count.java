@@ -1,5 +1,5 @@
 public class Count {
-    int count = 5;
+    int count = 0;
     public int add() {
         count = count + 1;
         return count;

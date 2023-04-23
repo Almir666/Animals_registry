@@ -35,7 +35,5 @@ public class Main {
 
         App getApp = new App();
         getApp.start(PetsList, PackList);
-
-        System.out.println(String.valueOf("Count: " + count.getCount()));
     }
 }
